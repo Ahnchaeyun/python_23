@@ -6,3 +6,5 @@ v = np.array([
     ])
 
 print(v.ndim, v.shape, v.data, v.dtype, v.strudes)
+print('test1')
+print('test2')
