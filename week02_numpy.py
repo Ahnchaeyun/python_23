@@ -6,4 +6,3 @@ v = np.array([
     ])
 
 print(v.ndim, v.shape, v.data, v.dtype, v.strudes)
-print("왜 안바뀌나용?")
