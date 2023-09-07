@@ -6,3 +6,4 @@ v = np.array([
     ])
 
 print(v.ndim, v.shape, v.data, v.dtype, v.strudes)
+print("바뀌었나용")
