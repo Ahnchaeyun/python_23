@@ -3,11 +3,11 @@ import random
 import tkinter as tk  # Built in GUI
 from tkinter import (messagebox)  # 팝업 윈도우
 
-def press_enter_key(ev):
-    click_button()
-    messagebox.showinfo('x, y', f"({ev.x},{ev.y})")
+# def press_enter_key(ev):
+#     click_button()
+#     messagebox.showinfo('x, y', f"({ev.x},{ev.y})")
 
-def click_button():
+def click_button(*args):
     try:
         r, c = map(int, en_row.get().split())
         matrix = np.random.randint(1, 101, size=(r, c))
@@ -16,7 +16,7 @@ def click_button():
         messagebox.showerror('Error!', f'입력 값이 없습니다. \n{err}')
 
 window = tk.Tk()
-window.title('numpy gui version v0.9')
+window.title('numpy gui version v2.0')
 window.geometry('300x150')
 
 # create widget, 작성한 순서에 따라 ui가 구성
@@ -24,7 +24,8 @@ lbl_result = tk.Label(text="random numpy 2D array")
 en_row = tk.Entry()  # 입력 상자
 btn_click = tk.Button(text="click me!", command=click_button)
 
-en_row.bind("<Return>", press_enter_key)
+# en_row.bind("<Return>", press_enter_key)
+en_row.bind("<Return>", click_button())
 # widget layout
 lbl_result.pack()
 en_row.pack(fill='x')
