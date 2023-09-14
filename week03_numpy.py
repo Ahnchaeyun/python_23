@@ -25,7 +25,7 @@ def click_button():
 
         rows = list()
         for i in range(c):
-            rows.append([random.randint(1, 100) for i in range(r)])
+            rows = [[random.randint(1, 100) for i in range(r)]for i in range(c)]
         matrix = np.array(rows, dtype='int16')
         lbl_result.config(text=matrix) #출력 결과를 나타내는 레이블을 만듬
     except ValueError as err:
