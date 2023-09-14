@@ -27,6 +27,7 @@ def click_button():
     except ValueError as err:
         # lbl_result.config(text=f"입력 값이 없습니다.\n{err}")
         messagebox.showerror('Error!',f'입력 값이 없습니다. \n{err}')
+        # messagebox.showwarning('Error!', f'입력 값이 없습니다. \n{err}')
 
 window = tk.Tk()
 window.title('numpy gui version v0.9')
