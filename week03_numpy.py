@@ -29,9 +29,9 @@ window.title('numpy gui version v0.7')
 window.geometry('300x150')
 
 # create widget, 작성한 순서에 따라 ui가 구성
-lbl_result = tk.Label(text="random numpy array")
-en_number = tk.Entry() #입력 상자
 btn_click = tk.Button(text="click me!", command=click_button)
+en_number = tk.Entry() #입력 상자
+lbl_result = tk.Label(text="random numpy array")
 
 # widget layout
 lbl_result.pack()
