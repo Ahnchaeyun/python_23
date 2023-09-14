@@ -34,14 +34,19 @@ window.title('numpy gui version v0.9')
 window.geometry('300x150')
 
 # create widget, 작성한 순서에 따라 ui가 구성
-btn_click = tk.Button(text="click me!", command=click_button)
-en_number = tk.Entry() #입력 상자
 lbl_result = tk.Label(text="random numpy array")
+en_number = tk.Entry() #입력 상자
+btn_click = tk.Button(text="click me!", command=click_button)
 
 # widget layout
-lbl_result.pack()
-en_number.pack(fill='right')
-btn_click.pack(fill='x')
+# 격자배열
+# lbl_result.pack()
+# en_number.pack(fill='right')
+# btn_click.pack(fill='x')
+# 행렬배열
+lbl_result.grid(row=0, column=0, columnspan=2)
+en_number.grid(row=1, column=0)
+btn_click.grid(row=1, column=1)
 
 window.mainloop()
 # n = int(input("input number : "))
