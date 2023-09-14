@@ -5,7 +5,7 @@ from tkinter import (messagebox)  # 팝업 윈도우
 
 def press_enter_key(ev):
     click_button()
-    messagebox.showinfo('cordinate value', f"({ev.x},{ev.y})")
+    messagebox.showinfo('x, y', f"({ev.x},{ev.y})")
 
 def click_button():
     try:
@@ -24,11 +24,13 @@ lbl_result = tk.Label(text="random numpy 2D array")
 en_row = tk.Entry()  # 입력 상자
 btn_click = tk.Button(text="click me!", command=click_button)
 
-en_row.bind("<Return>", click_button)
+en_row.bind("<Return>", press_enter_key)
 # widget layout
 lbl_result.pack()
 en_row.pack(fill='x')
 btn_click.pack(fill='x')
+
+en_row.focus()
 # 격자배열
 # lbl_result.pack()
 # en_row.pack(fill='x')
