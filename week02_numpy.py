@@ -21,7 +21,7 @@ def click_button():
     n = int(en_number.get())
     l = [random.randint(1, 100) for i in range(n)]
     v = np.array(l, dtype='int16')
-    lbl_result.config(text=v)
+    lbl_result.config(text=v) #출력 결과를 나타내는 레이블을 만듬
 
 
 window = tk.Tk()
@@ -30,7 +30,7 @@ window.geometry('300x150')
 
 # create widget
 lbl_result = tk.Label(text="random numpy array")
-en_number = tk.Entry()
+en_number = tk.Entry() #입력 상자
 btn_click = tk.Button(text="click me!", command=click_button)
 
 # widget layout
