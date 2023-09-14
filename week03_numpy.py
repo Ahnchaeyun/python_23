@@ -16,16 +16,20 @@
 import numpy as np
 import random
 import tkinter as tk  # Built in GUI
+from tkinter import messagebox #팝업 윈도우
 
 def click_button():
-    n = int(en_number.get())
-    l = [random.randint(1, 100) for i in range(n)]
-    v = np.array(l, dtype='int16')
-    lbl_result.config(text=v) #출력 결과를 나타내는 레이블을 만듬
-
+    try:
+        n = int(en_number.get())
+        l = [random.randint(1, 100) for i in range(n)]
+        v= np.array(l, dtype='int16')
+        lbl_result.config(text=v) #출력 결과를 나타내는 레이블을 만듬
+    except ValueError as err:
+        # lbl_result.config(text=f"입력 값이 없습니다.\n{err}")
+        messagebox.showerror('Error!',f'입력 값이 없습니다. \n{err}')
 
 window = tk.Tk()
-window.title('numpy gui version v0.7')
+window.title('numpy gui version v0.9')
 window.geometry('300x150')
 
 # create widget, 작성한 순서에 따라 ui가 구성
