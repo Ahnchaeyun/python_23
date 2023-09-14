@@ -40,7 +40,7 @@ lbl_result = tk.Label(text="random numpy array")
 
 # widget layout
 lbl_result.pack()
-en_number.pack(fill='x')
+en_number.pack(fill='right')
 btn_click.pack(fill='x')
 
 window.mainloop()
