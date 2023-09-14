@@ -47,6 +47,8 @@ btn_click = tk.Button(text="click me!", command=click_button)
 lbl_result.grid(row=0, column=0, columnspan=2)
 en_number.grid(row=1, column=0)
 btn_click.grid(row=1, column=1)
+# 절대좌표값
+# lbl_result.place(x=50, y=50)
 
 window.mainloop()
 # n = int(input("input number : "))
