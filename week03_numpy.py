@@ -24,14 +24,17 @@ lbl_result = tk.Label(text="random numpy 2D array")
 en_row = tk.Entry()  # 입력 상자
 btn_click = tk.Button(text="click me!", command=click_button)
 
-# en_row.bind("<Return>", press_enter_key)
-en_row.bind("<Return>", click_button())
+
+#en_row.bind("<Return>", press_enter_key)
+en_row.bind("<Return>", click_button)
 # widget layout
 lbl_result.pack()
 en_row.pack(fill='x')
 btn_click.pack(fill='x')
 
 en_row.focus()
+
+window.mainloop()
 # 격자배열
 # lbl_result.pack()
 # en_row.pack(fill='x')
@@ -43,7 +46,7 @@ en_row.focus()
 # btn_click.grid(row=1, column=1)
 # 절대좌표값
 # lbl_result.place(x=50, y=50)
-window.mainloop()
+
 # n = int(input("input number : "))
 # l = [random.randint(1, 100) for i in range(n)]
 # v = np.array(l, dtype='int16')
