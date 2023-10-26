@@ -1,16 +1,18 @@
 import numpy as np
 
+np_1d = np.arange(1, 10, 2)
+# np_1d = np.arange(1.0, 10.0, 2.0)
+print(np_1d)
+
+np_1d = np_1d.reshape(1, 5)  # reshape: 모양 바꾸는 것.
+print(np_1d)
+
 def info(x):
     print(f"배열의 차원은 {x.ndim} 입니다.")
     print(f"배열의 shape는 {x.shape} 입니다.")
     print(f"배열의 원소의 개수는 {x.size} 입니다.")
+info(np_1d)
 
-np_1d = np.arange(1, 10, 2)
-# np_1d = np.arange(1.0, 10.0, 2.0)
-
-np_1d = np_1d.reshape(5, 2)
-#reshape: 모양 바꾸는 것.
-print(np_1d)
 print(np_1d, type(np_1d))
 print(np_1d, type(np_1d[0]))
 print(np_1d.ndim)
