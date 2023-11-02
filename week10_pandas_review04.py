@@ -1,12 +1,11 @@
 import numpy as np
-a = np.arange(1, 7).reshape(2, 3)
-b = np.array([
-    [5, 20],
-    [11. -1],
-    [9, 3]
-])
-
-print(a.dot(b))
+import matplotlib.pyplot as plt
+np.random.seed()
+a = np.random.uniform(size=1000)
+# a = np.random.uniform(size=10).reshape(2, 5)
+b = np.random.normal(0, 1, 1000)
+plt.hist(a)
+plt.show()
 
 
 # a1 = np.arange(1, 6)
