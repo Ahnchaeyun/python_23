@@ -8,9 +8,8 @@ df = pd.DataFrame(
     columns=['KOR', 'ENG', 'MAT']
 )
 print(df)
-# df_copy = df.iloc[:, [0, 2]]
-# df_copy = df.loc[:, ['KOR', 'MAT']]
-df_copy = df.loc[:, 'KOR':'MAT':2]
+# 국어, 영어 성적이 모두 95점 이상인 경우
+print(df.query('KOR' >95 and 'ENG' >95))
 # 1번 학생의 수학 성적(100) 출력
 print(df.at[1, 'MAT'])
 #print(df.iat[1, 3])
@@ -19,13 +18,3 @@ print(df.iat[0, 2])
 # 조건은 국어 성적이 95점 이상인 경우
 df_copy = df.loc[df['KOR']>=95, ['KOR', 'MAT']]
 print(df_copy)
-
-df = (pd.melt(df)
-       .rename(columns={
-        'variable': 'subject',
-        'value': 'score'})
-       .query('score >= 90')
-       .sort_values('score', ascending=False)
-       )
-print(df)
-print(df.iloc[:, [1]])
