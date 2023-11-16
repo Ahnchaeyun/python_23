@@ -16,6 +16,11 @@ html = """
 soup = BeautifulSoup(html, 'html.parser')
 urls = soup.find_all("a")
 print(urls)
+
+for url in urls:
+    print("{0}의 주소는 {1}입니다.".format(url.string, url.attrs['href']))
+
+
 # from bs4 import BeautifulSoup
 # html = """
 # <html>
