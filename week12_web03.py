@@ -12,13 +12,9 @@ html = """
 </html>
 """
 soup = BeautifulSoup(html, 'html.parser')
-t = soup.html.head.title
-print(t)
-print(t.string)
-h1 = soup.html.body.h1.string
-print(h1)
-p1 = soup.html.body.p.string
-#p2 = soup.html.body.p.string
-p2 = p1.next_sibling.next_sibling
-print(p1)
-print(p2)
+university = soup.find(id='univ')
+contents = soup.find(id='contents')
+
+print(university)
+print(contents)
+print(contents.string)
