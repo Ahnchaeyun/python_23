@@ -1,26 +1,42 @@
-import numpy as np
+import pandas as pd
 
-a = np.array([1, 3, 5, 7])  # 네 가지 원소를 가진 배열
-print(a)
-print(a.ndim)  # 차원
-
-b = np.array([[1, 3, 5, 7], [5, 6, 7, 8], [7, 8, 9, 3]])
-print(b.shape, b.strides)
-
-c = np.array([[1, 3, 5, 7], [5, 6, 7, "8"], [7, 8, 9, 3]])
-print(c, c.dtype)
-
-#ndim, shape, dtype
-#배열의 차원 수, 배열의 차원과 크기를 나타내는 튜플 형태의 속성, 배열 요소의 데이터 타입을 나타내는 속성
-#strides
-
-d = np.arange(5, 10, 2)
+d = pd.DataFrame(
+    [['persian', 'bengal', 'russian'],
+        ['maltese', 'poodle', 'retriever'],
+        ['maltese', 7, 'cute']],
+    index=['cat', 'dog', 'som'],
+    columns=[1, 2, 3]
+)
 print(d)
+print("-------------------")
 
-a1 = np.ones(5)
-a2 = np.array([1, 1, 1, 1, 1])
-a3 = np.arange(5)*0+1
-a4 = np.zeros(5)+1
-a5 = np.linspace(1, 1, 5)
-a6 = np.full(5, 1)
+data = {
+    'A': [99, 89, 81],
+    'B':[91, 98, 90],
+    'C':[95, 97, 85]
+}
 
+dd = pd.DataFrame(data)
+print(dd)
+
+value = dd[1:4] #인덱스 1에서 3까지의 행
+
+print(value)
+print("-------------------")
+
+df = pd.DataFrame(
+    [[99, 89, 81],
+        [91, 98, 90],
+        [95, 97, 85],
+        [83, 96, 94]],
+    index=[1, 2, 3, 4],
+    columns=['KOR', 'ENG', 'MAT']
+)
+
+data1 = df.loc[1:2] #1부터 2까지의 행
+data2 = df.iloc[1:4] # 정수/1부터 3까지의 행
+
+print(data1)
+print(data2)
+
+#apply: 특정함수 적용
