@@ -27,3 +27,8 @@ for i in range(1, 52):
 
 holly_df = pandas.DataFrame(shops, columns = ('매장명', '주소', '전화번호', '일시'))
 holly_df.to_csv('holly.csv', mode ="w", encoding='cp949')
+#데이터 프레임에 넣으려고 2차원 리스트로 만듬
+
+#ndarray 자료를 사용함, 메모리 사용량이 적음
+#넘파이 배열은 반복문 없이도 수학적 계산 가능
+
