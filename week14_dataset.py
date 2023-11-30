@@ -1,11 +1,24 @@
+"""
+1) 생존자와 사망자 수를 구하시오.
+2) 남성과 여성의 생존률을 구하시오.
+3) 객실 등급별 생존자 수를 구하시오.
+4) 나이대별 생존자 수를 구하시오.
+"""
 import seaborn as sns
+import pandas as pd
+
+import matplotlib.pyplot as plt
 
 titanic = sns.load_dataset('titanic')
 
-print(titanic.info())
-print(titanic.head())
+# [0, 10, 20, 30, 40, 50, 60 , 70, 80]
+age_survived = titanic.groupby(pd.cut(titanic['age'], bins=range(0, 81, 10)))['survived'].sum()
+print(age_survived)
 
-survived_human = titanic[titanic["survived"] == 1]["survived"].count()
-dead_human = titanic[titanic["survived"] == 0]["survived"].count()
-print(f"생존자 수 : {survived_human}명")
-print(f"사망자 수 : {dead_human}명")
+
+
+plt(age_survived)
+plt.show()
+
+
+
