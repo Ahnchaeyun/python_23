@@ -1,11 +1,5 @@
 import numpy as np
 
-# df = np.array({
-#     'a': [1, 2, np.nan, 4],
-#     'b':[5, np.nan, 7, 8],
-#     'c':[9, 10, 11, np.nan]
-# })
-
 data = np.array([
     [1, 5, 9],
     [2, np.nan, 10],

@@ -27,14 +27,14 @@ df.fillna(df.mean(), inplace=True)
 print("2")
 print(df)
 
-for col in df.columns:
-    # print(col)
-    df[col] = np.where(pd.isnull(df[col]), np.mean(df[col]), df[col])
-    #np.where(조건, 참일 때 값, 거짓일 때 값)
-    #1. where 함수로 각 열의 원소가 결측값이면 평균 값, 아니면 원래 값
-    #2. pd.isnull()함수는 원소가 결측값인지 여부 확인
-print("3")
-print(df)
+# for col in df.columns:
+#     # print(col)
+#     df[col] = np.where(pd.isnull(df[col]), np.mean(df[col]), df[col])
+#     #np.where(조건, 참일 때 값, 거짓일 때 값)
+#     #1. where 함수로 각 열의 원소가 결측값이면 평균 값, 아니면 원래 값
+#     #2. pd.isnull()함수는 원소가 결측값인지 여부 확인
+# print("3")
+# print(df)
 
 from sklearn.impute import SimpleImputer #결집값 처리 전용 클래스
 i = SimpleImputer(strategy='mean')  

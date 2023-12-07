@@ -3,6 +3,20 @@ import numpy as np
 # numpy 배열
 # 1. 동일한 데이터 타입의 원소만 저장
 # 2. 메모리에 연속적으로 저장되어 빠른 속도로 데이터 처리 가능
+#
+# np = np.arange(1, 10, 2)
+# np = np.reshape(1, 5)
+# 1. info(np): 차원, shape, 원소 개수
+# 2. type(np): 타입
+# 3. np.ndim: 차원
+# 4. np.szie: 개수
+# 5. np.shape: 모양
+#
+# error = [1, "error", 1.5, (1,2)]
+# right = ["1", "error", "1.5", "(1,2)"]
+# 1. error_np = np.array(error)
+# 2. right_np = np.array(right)
+# = 문자열 외에 다른 타입의 튜플이 포함된 리스트를 numpy로 변환 시, 오류 발생
 
 np_1d = np.arange(1, 10, 2)
 print(np_1d)
