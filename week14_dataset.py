@@ -1,23 +1,20 @@
-"""
-1) 생존자와 사망자 수를 구하시오.
-2) 남성과 여성의 생존률을 구하시오.
-3) 객실 등급별 생존자 수를 구하시오.
-4) 나이대별 생존자 수를 구하시오.
-5) 나이분포 시각화
-"""
 import seaborn as sns
-import pandas as pd
-
-import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
 
 titanic = sns.load_dataset('titanic')
 
-survived_ages = titanic[titanic['survived']==1]['age'].dropna()
-dead_ages = titanic[titanic['survived']==0]['age'].dropna()
+titanic = titanic.drop({'who', 'deck', 'embark_towm', 'alive', 'class', 'adult_male', 'alone'}, axis=1)
+titanic = titanic.dropna()
+titanic['sex'] = titanic['sex'].map({'male':0, 'female':1})
+titanic['embarked'] = titanic['embarked'].map({'S': 0, 'C': 1, 'Q': 2})
+x = titanic.drop('survived', axis=1)
+y = titanic['survived']
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.15, random_state=5)
+model = LogisticRegression(solver='liblinear')
+model.fit(x_train, y_train)
 
-plt.hist(survived_ages, bins=20, label='survived', alpha=0.5)
-plt.hist(dead_ages, bins=20, label='dead', alpha=0.5)
-plt.xlabel('age')
-plt.ylabel('count')
-plt.legend()
-plt.show()
+y_pred = model.predict(x_test)
+print(f'정확도: {accuracy_score(y_test, y_pred)}')
+
